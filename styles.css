@@ -1,0 +1,58 @@
+body {
+  background-color: rgb(194, 212, 212);
+  margin-right: 4%;
+  margin-left: 4%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 80px;
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#image {
+  display: flex;
+}
+
+h3 {
+  margin: 0;
+}
+
+h1 {
+  margin: 7px;
+  font-size: 60px;
+}
+
+h4 {
+  margin: -5px 0 40px 40px;
+  font-weight: lighter;
+}
+
+button {
+  display: flex;
+  align-self: center;
+  margin-top: 70px;
+  width: fit-content;
+  padding: 5px;
+}
+
+.input {
+  margin: 20px;
+}
+
+label {
+  margin: 2px;
+}

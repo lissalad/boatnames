@@ -2,7 +2,6 @@
 
 The website that generates a name for your boat.
 
-
 ## Usage
 
 - (Optional) Enter specific word that you'd like
@@ -11,4 +10,3 @@ The website that generates a name for your boat.
 - Click "Generate"
 
 - Generate another boat name by clicking "Start Over"
-
