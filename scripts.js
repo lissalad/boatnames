@@ -6,27 +6,30 @@ const generateButton = document.getElementById("generate-button");
 
 let boatName = "";
 let boatWords = [];
-let count = wordCount;
 
 // ------------------- event listener ------------------------------- //
 generateButton.onclick = function (e) {
+  let count = wordCount.value;
   boatName = "";
   boatWords = [];
-  // ------------------ use keyword -------------------------------- //
+  // ------------------ use keyword if there ----------------------- //
   if (keyword.value != "") {
     boatWords += keyword.value + " ";
     count -= 1;
   }
-  // -------------------------------------------------- //
-  if (wordCount === 1) {
-    count = getRandomWord(data.boat);
-  }
-  // -------------------------------------------------- //
-  else {
-    const nameLength = wordCount.value;
-    for (let i = 0; i < nameLength; i++) {
-      boatName += getRandomWord(data.noun) + " ";
-    }
+  // ----------------- fill in the rest ----------------------- //
+  while (count > 0) {
+    // -------------------------------------------------- //
+    // if (count === 1) {
+    boatWords += getRandomWord(data.noun) + " ";
+    count -= 1;
+    // }
+    // -------------------------------------------------- //
+    // else {
+    //   for (let i = 0; i < count; i++) {
+    //     boatName += getRandomWord(data.boat) + " ";
+    //   }
+    // }
   }
   output();
 };
@@ -34,7 +37,9 @@ generateButton.onclick = function (e) {
 function getRandomWord(list) {
   const length = list.length;
   const i = Math.floor(Math.random() * length);
-  return list[i];
+  const word = list[i];
+  list.splice(i, 1);
+  return word;
 }
 
 function output() {

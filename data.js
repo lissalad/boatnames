@@ -44,7 +44,6 @@ const data = {
     "tanker",
     "carrier",
     "treader",
-    "raft",
     "victory",
     "triumph",
     "tide",
