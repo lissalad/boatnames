@@ -54,14 +54,15 @@ p {
 
 button {
   display: flex;
+  /* margin-top: 70px; */
   align-self: center;
-  margin-top: 70px;
-  width: fit-content;
+
   padding: 17px;
   background-color: cadetblue;
   color: whitesmoke;
   font-size: 30px;
   border-radius: 30px;
+  width: fit-content;
   border: 9px solid rgba(37, 82, 71, 0.589);
 }
 
@@ -77,4 +78,10 @@ button:hover {
 label {
   margin: 2px;
   font-family: "Merriweather", serif;
+}
+
+a {
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
 }
