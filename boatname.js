@@ -1,3 +1,8 @@
-import boatName from "./scripts.js";
+// import boatName from "./scripts.js";
+const nameInput = document.querySelector("#title");
 
-console.log(boatName);
+const name = document.querySelector("#title");
+
+console.log(window.localStorage.getItem("boatName"));
+
+nameInput.innerHTML = window.localStorage.getItem("boatName");

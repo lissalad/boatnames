@@ -53,6 +53,9 @@ const data = {
     "isle",
     "depths",
     "coast",
+    "symphony",
+    "terror",
+    "vision",
   ],
   water: [
     "sea",

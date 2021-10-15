@@ -4,6 +4,8 @@ const keyword = document.getElementById("keyword");
 const wordCount = document.getElementById("word-count");
 const generateButton = document.getElementById("generate-button");
 
+let boatName = "";
+
 // let boatWords = [];
 
 // ------------------- event listener ------------------------------- //
@@ -16,17 +18,21 @@ generateButton.onclick = function (e) {
     count -= 1;
   }
   // ----------------- fill in the rest ----------------------- //
-  while (count > 1) {
-    // console.log(typeof boatWords);
-    // -------------------------------------------------- //
-    for (let i = 1; i < count; i++) {
-      boatWords.push(getRandomWord(data.noun));
-      count -= 1;
-    }
+  // while (count > 1) {
+  // -------------------------------------------------- //
+  // for (let i = 1; i < count; i += 2) {
+  if (count > 1) {
+    boatWords.push(getRandomWord(data.water));
+    count -= 1;
   }
-  boatWords.push(getRandomWord(data.boat));
-  count -= 1;
-
+  if (count > 1) {
+    boatWords.unshift(getRandomWord(data.noun));
+    count -= 1;
+  }
+  if (count > 0) {
+    boatWords.push(getRandomWord(data.boat));
+    count -= 1;
+  }
   output(boatWords);
 };
 
@@ -45,11 +51,12 @@ function formatWord(word) {
 }
 
 function output(words) {
-  let boatName = "";
+  boatName = "";
   for (let i = 0; i < words.length; i++) {
     boatName += formatWord(words[i]);
   }
+  location.href = "./boatname.html";
   console.log(boatName);
-}
 
-// export default boatName; // HELP
+  window.localStorage.setItem("boatName", boatName);
+}
