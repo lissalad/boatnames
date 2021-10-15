@@ -22,11 +22,11 @@ generateButton.onclick = function (e) {
   // -------------------------------------------------- //
   // for (let i = 1; i < count; i += 2) {
   if (count > 1) {
-    boatWords.push(getRandomWord(data.water));
+    boatWords.unshift(getRandomWord(data.water));
     count -= 1;
   }
   if (count > 1) {
-    boatWords.unshift(getRandomWord(data.noun));
+    boatWords.push(getRandomWord(data.noun));
     count -= 1;
   }
   if (count > 0) {

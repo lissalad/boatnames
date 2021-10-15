@@ -9,11 +9,26 @@ body {
 }
 
 header {
+}
+#titles {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
   border-bottom: rgb(9, 74, 104) 4px solid;
+}
+
+#icon {
+  width: 100px;
+  margin-left: 30px;
 }
 
 main {
@@ -68,12 +83,14 @@ main {
   text-align: center;
   /* top: 50%;
   left: 30%; */
-  transform: translate(0%, -360%);
+  transform: translate(0%, -390%);
   width: 100%;
 
   color: whitesmoke;
   font-family: "Permanent Marker";
-  font-size: 35px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: lighter;
 }
 
 h1 {
