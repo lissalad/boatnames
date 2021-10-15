@@ -4,34 +4,30 @@ const keyword = document.getElementById("keyword");
 const wordCount = document.getElementById("word-count");
 const generateButton = document.getElementById("generate-button");
 
-let boatName = "";
-let boatWords = [];
+// let boatWords = [];
 
 // ------------------- event listener ------------------------------- //
 generateButton.onclick = function (e) {
   let count = wordCount.value;
-  boatName = "";
-  boatWords = [];
+  let boatWords = [];
   // ------------------ use keyword if there ----------------------- //
   if (keyword.value != "") {
-    boatWords += keyword.value + " ";
+    boatWords.push(keyword.value);
     count -= 1;
   }
   // ----------------- fill in the rest ----------------------- //
-  while (count > 0) {
+  while (count > 1) {
+    // console.log(typeof boatWords);
     // -------------------------------------------------- //
-    // if (count === 1) {
-    boatWords += getRandomWord(data.noun) + " ";
-    count -= 1;
-    // }
-    // -------------------------------------------------- //
-    // else {
-    //   for (let i = 0; i < count; i++) {
-    //     boatName += getRandomWord(data.boat) + " ";
-    //   }
-    // }
+    for (let i = 1; i < count; i++) {
+      boatWords.push(getRandomWord(data.noun));
+      count -= 1;
+    }
   }
-  output();
+  boatWords.push(getRandomWord(data.boat));
+  count -= 1;
+
+  output(boatWords);
 };
 
 function getRandomWord(list) {
@@ -42,9 +38,16 @@ function getRandomWord(list) {
   return word;
 }
 
-function output() {
-  for (let i = 0; i < boatWords.length; i++) {
-    boatName += boatWords[i];
+function formatWord(word) {
+  let name = word.toLowerCase();
+  name = name.charAt(0).toUpperCase() + name.substring(1);
+  return name + " ";
+}
+
+function output(words) {
+  let boatName = "";
+  for (let i = 0; i < words.length; i++) {
+    boatName += formatWord(words[i]);
   }
   console.log(boatName);
 }
